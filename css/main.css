@@ -247,9 +247,8 @@ video {
     width: 60%;
 }
 
-
 .portfolio-item-list a {
-    width: 10%;
+    padding: 5px 20px;
     text-decoration: none;
     font-size: 30px;
     letter-spacing: 0px;
@@ -264,11 +263,11 @@ video {
     color: #FFF;
     background-color: #2ECC71;
     outline: none;
-    transition: all 0.6s ease;
-    -webkit-transition: all 0.6s ease;
-    -moz-transition: all 0.6s ease;
-    -ms-transition: all 0.6s ease;
-    -o-transition: all 0.6s ease;
+    transition: all 0.6s;
+    -webkit-transition: all 0.6s ease-in-out;
+    -moz-transition: all 0.6s;
+    -ms-transition: all 0.6s;
+    -o-transition: all 0.6s;
 }
 
 .portfolio-gallery {
