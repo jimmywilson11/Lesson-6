@@ -84,6 +84,23 @@ video {
     text-align: center;
 }
 
+.greetings a::after {
+    position: relative;
+    content: '';
+    width: 10000%;
+    transform: translateX(-50%);
+    display: block;
+    height: 2px;
+    background: #FFF;
+    margin: 0 auto;
+    margin-top: -42%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    z-index: 1;
+}
+
 .greetings span {
     margin-top: 10px;
     font-size: 3em;
@@ -151,7 +168,7 @@ video {
     font-size: 24px;
     letter-spacing: 1px;
     line-height: 33px;
-    color: #ffffff;
+    color: #FFF;
     font-family: "Droid Serif";
     font-weight: 400;
     padding-bottom: 135px;
@@ -218,28 +235,27 @@ video {
     text-align: center;
 }
 
+.portfolio-nav {
+    display: flex;
+    justify-content: center;
+}
+
 .portfolio-item-list {
     display: flex;
     justify-content: space-between;
+    justify-items: center;
+    width: 60%;
 }
 
-.portfolio-item-list li {
-    display: flex;
-    justify-content: space-between;
-}
 
 .portfolio-item-list a {
+    width: 10%;
     text-decoration: none;
     font-size: 30px;
     letter-spacing: 0px;
     line-height: 31px;
     color: #2C3E50;
     font-weight: 400;
-    transition: opacity .1s, visibility .12s all;
-    -webkit-transition: opacity .1s, visibility .12s all;
-    -moz-transition: opacity .1s, visibility .12s all;
-    -ms-transition: opacity .1s, visibility .12s all;
-    -o-transition: opacity .1s, visibility .12s all;
 }
 
 .portfolio-item-list a:hover {
@@ -247,7 +263,12 @@ video {
     border-radius: 20px;
     color: #FFF;
     background-color: #2ECC71;
-
+    outline: none;
+    transition: all 0.6s ease;
+    -webkit-transition: all 0.6s ease;
+    -moz-transition: all 0.6s ease;
+    -ms-transition: all 0.6s ease;
+    -o-transition: all 0.6s ease;
 }
 
 .portfolio-gallery {
@@ -304,6 +325,7 @@ video {
     right: 0;
     visibility: hidden;
 }
+
 
 #team {
     height: 100vh;
@@ -370,6 +392,8 @@ video {
 
 .team-social {
     display: flex;
+    justify-content: space-between;
+    width: 40%;
 }
 
 .team-info span {
@@ -383,6 +407,16 @@ video {
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
+}
+
+.team-info span:hover {
+    color: #000;
+    background-color: #FFF;
+    transition: 0.8s all;
+    -webkit-transition: 0.8s all;
+    -moz-transition: 0.8s all;
+    -ms-transition: 0.8s all;
+    -o-transition: 0.8s all;
 }
 
 #contact {
@@ -428,7 +462,6 @@ video {
 input {
     width: 80%;
     height: 30px;
-
     font-size: 26px;
     letter-spacing: 0px;
     line-height: 33px;
@@ -468,8 +501,18 @@ input {
     margin-top: 48px;
 }
 
-address {
+.btn:hover {
+    background-color: #FFF;
+    color: #2ECC71;
+    border: #2ECC71 2px solid;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    -o-transition: 0.5s all;
+}
 
+address {
     display: flex;
     flex-direction: column;
     width: 15%;
@@ -480,7 +523,6 @@ address {
     font-family: "Droid Sans";
     font-weight: 400;
     font-style: normal;
-
 }
 
 address span {
@@ -501,17 +543,22 @@ footer .container {
 
 .footer-content-wrap {
     display: flex;
-    justify-content: space-between;
     padding-top: 38px;
 }
 
 .footer-address {
-    width: 14%;
+    display: flex;
+    flex-direction: column;
+
+    width: 30%;
     font-style: normal;
 }
 
 .referenses {
-    width: 13%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 30%;
 }
 
 .referenses a {
@@ -523,17 +570,30 @@ footer .container {
     font-family: "Droid Sans";
     font-weight: 700;
     text-align: center;
+    font-style: normal;
 }
 
 .social {
     display: flex;
-    width: 50%;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 30%;
+}
+
+.social span:hover {
+    color: #000;
+    background-color: #FFF;
+    transition: 0.8s all;
+    -webkit-transition: 0.8s all;
+    -moz-transition: 0.8s all;
+    -ms-transition: 0.8s all;
+    -o-transition: 0.8s all;
 }
 
 .social ul {
     display: flex;
-    width: 40%;
-    justify-content: space-between;
+    width: 100%;
+    justify-content: space-around;
 }
 
 .footer-address p {
@@ -543,18 +603,16 @@ footer .container {
     color: #FFF;
     font-family: "Droid Sans";
     font-weight: 700;
-    text-align: center;
     text-decoration: none;
 }
 
 footer span {
-    margin-top: -15px;
-    font-size: 3em;
+    font-size: 2em;
     color: #FFF;
-    width: 60px;
-    height: 60px;
-    padding-top: 15px;
-    padding-left: 15px;
+    width: 40px;
+    height: 40px;
+    padding-top: 10px;
+    padding-left: 12px;
     border: solid 2px #FFF;
     border-radius: 50%;
     -webkit-border-radius: 50%;
