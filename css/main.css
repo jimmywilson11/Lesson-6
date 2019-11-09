@@ -7,6 +7,10 @@ header {
     z-index: 10;
 }
 
+.animate {
+    background-color: #34495E;
+}
+
 header .container {
     display: flex;
     padding: 15px;
@@ -37,10 +41,19 @@ header .container {
     letter-spacing: 0px;
     line-height: 31px;
     color: #FFF;
-    font-family: "Droid Sans";
+    font-family: "Droid Sans Regular";
     font-weight: 400;
     text-align: center;
     text-decoration: none;
+}
+
+.menu-item a:hover {
+    color: #FF0000;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
 }
 
 .video {
@@ -69,7 +82,7 @@ video {
     letter-spacing: 1px;
     line-height: 93px;
     color: #FFF;
-    font-family: "Droid Sans";
+    font-family: "Droid Sans Bold";
     font-weight: 700;
     text-align: center;
     padding-bottom: 122px;
@@ -112,18 +125,8 @@ video {
     letter-spacing: 0px;
     line-height: 31px;
     color: #FFF;
-    font-family: "Droid Serif";
+    font-family: "Droid Serif Regular";
     font-weight: 400;
-    text-align: center;
-}
-
-.video h2 {
-    font-size: 80px;
-    letter-spacing: 1px;
-    line-height: 93px;
-    color: #FFF;
-    font-family: "Droid Sans";
-    font-weight: 700;
     text-align: center;
 }
 
@@ -157,7 +160,7 @@ video {
     letter-spacing: 0px;
     line-height: 31px;
     color: #FFF;
-    font-family: "Droid Sans";
+    font-family: "Droid Sans Bold";
     font-weight: 700;
     text-align: center;
 }
@@ -169,7 +172,7 @@ video {
     letter-spacing: 1px;
     line-height: 33px;
     color: #FFF;
-    font-family: "Droid Serif";
+    font-family: "Droid Serif Regular";
     font-weight: 400;
     padding-bottom: 135px;
 }
@@ -203,7 +206,7 @@ video {
     letter-spacing: 0px;
     line-height: 33px;
     color: #FFF;
-    font-family: "Droid Sans";
+    font-family: "Droid Sans Bold";
     font-weight: 700;
 }
 
@@ -214,7 +217,7 @@ video {
     letter-spacing: 0px;
     line-height: 30px;
     color: #FFF;
-    font-family: "Droid Serif";
+    font-family: "Droid Serif Regular";
     font-weight: 400;
     text-align: center;
 }
@@ -253,18 +256,18 @@ video {
     font-size: 30px;
     letter-spacing: 0px;
     line-height: 31px;
+    border-radius: 20px;
     color: #2C3E50;
     font-weight: 400;
 }
 
 .portfolio-item-list a:hover {
     padding: 5px 20px;
-    border-radius: 20px;
     color: #FFF;
     background-color: #2ECC71;
     outline: none;
     transition: all 0.6s;
-    -webkit-transition: all 0.6s ease-in-out;
+    -webkit-transition: all 0.6s ease-in;
     -moz-transition: all 0.6s;
     -ms-transition: all 0.6s;
     -o-transition: all 0.6s;
@@ -282,8 +285,8 @@ video {
 }
 
 .gallery-item {
-    width: 33%;
-    padding-bottom: 30px;
+    position: relative;
+    padding: 20px;
 }
 
 .gallery img {
@@ -292,39 +295,61 @@ video {
     max-height: 260px;
     border: 10px solid #EEE;
     box-sizing: border-box;
+    background-color: #2C3E50;
+    opacity: 1;
 }
 
-.gallery-item h3 {
+.text-holder {
+    display: flex;
+    visibility: hidden;
+    max-width: 348px;
+    flex-direction: column;
+    position: absolute;
+    padding: 20px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+}
+
+.text-holder h3 {
     font-size: 35px;
     letter-spacing: 0px;
     line-height: 31px;
-    color: #FFF;
+    color: #2ECC71;
     font-weight: 700;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    visibility: hidden;
-    opacity: 0;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
 }
 
-.gallery-item a {
+.inf {
     text-decoration: none;
-    width: 110px;
-    height: 32px;
+    width: 25%;
+    height: auto;
+    color: #2ECC71;
     border-radius: 15px;
-    background-color: #FFF;
-    border: 1px solid #FFF;
-    padding: 5px 7px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    visibility: hidden;
+    background-color: transparent;
+    border: 2px solid #2ECC71;
+    padding: 7px 15px;
+    margin-left: 100px;
+    margin-top: 50px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
 }
 
+.inf:hover {
+    text-decoration: none;
+    color: #2ECC71;
+}
+
+.gallery-item:hover > .text-holder {
+    visibility: visible;
+    opacity: 1;
+}
 
 #team {
     height: 100vh;
@@ -337,7 +362,7 @@ video {
     letter-spacing: 0px;
     line-height: 31px;
     color: #FFF;
-    font-family: "Droid Sans";
+    font-family: "Droid Sans Bold";
     font-weight: 700;
     text-align: center;
 }
@@ -371,7 +396,7 @@ video {
     letter-spacing: 0px;
     line-height: 31px;
     color: #FFF;
-    font-family: "Droid Sans";
+    font-family: "Droid Sans Bolds";
     font-weight: 700;
     text-align: center;
 }
@@ -384,7 +409,7 @@ video {
     letter-spacing: 0px;
     line-height: 30px;
     color: #FFF;
-    font-family: "Droid Serif";
+    font-family: "Droid Serif Regular";
     font-weight: 400;
     text-align: center;
 }
@@ -429,7 +454,7 @@ video {
     letter-spacing: 0px;
     line-height: 31px;
     color: #2C3E50;
-    font-family: "Droid Sans";
+    font-family: "Droid Sans Bold";
     font-weight: 700;
     text-align: center;
 }
@@ -439,7 +464,7 @@ video {
     letter-spacing: 0px;
     line-height: 33px;
     color: #2C3E50;
-    font-family: "Droid Sans";
+    font-family: "Droid Sans Bold";
     font-weight: 700;
     text-align: center;
     padding-bottom: 88px;
@@ -465,7 +490,7 @@ input {
     letter-spacing: 0px;
     line-height: 33px;
     color: #2C3E50;
-    font-family: "Droid Serif";
+    font-family: "Droid Serif Regular";
     font-weight: 400;
     border-style: none;
     border-bottom: solid 2px #2ECC71;
@@ -483,7 +508,7 @@ input {
     letter-spacing: 0px;
     line-height: 33px;
     color: #2C3E50;
-    font-family: "Droid Serif";
+    font-family: "Droid Serif Regular";
     font-weight: 400;
     border-style: none;
     border-bottom: solid 2px #2ECC71;
@@ -511,7 +536,7 @@ input {
     -o-transition: 0.5s all;
 }
 
-address {
+.address {
     display: flex;
     flex-direction: column;
     width: 15%;
@@ -519,18 +544,23 @@ address {
     letter-spacing: 0px;
     line-height: 33px;
     color: #2C3E50;
-    font-family: "Droid Sans";
+    font-family: "Droid Sans Regular";
     font-weight: 400;
     font-style: normal;
 }
 
-address span {
+.refs:hover {
+    text-decoration: none;
+    color: #FF0000;
+}
+
+.address span {
     font-size: 16px;
     font-weight: 700;
 }
 
 footer {
-    background-color: #2C3E50;
+    background-color: #34495E;
     height: 282px;
 }
 
@@ -566,10 +596,14 @@ footer .container {
     font-size: 16px;
     letter-spacing: 0px;
     line-height: 26px;
-    font-family: "Droid Sans";
+    font-family: "Droid Sans Bold";
     font-weight: 700;
     text-align: center;
     font-style: normal;
+}
+
+.referenses a:hover {
+    color: #FF0000;
 }
 
 .social {
@@ -600,7 +634,7 @@ footer .container {
     letter-spacing: 0px;
     line-height: 26px;
     color: #FFF;
-    font-family: "Droid Sans";
+    font-family: "Droid Sans Bold";
     font-weight: 700;
     text-decoration: none;
 }
