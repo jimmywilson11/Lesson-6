@@ -7,6 +7,10 @@ header {
     z-index: 10;
 }
 
+.animate {
+    background-color: #34495E;
+}
+
 header .container {
     display: flex;
     padding: 15px;
@@ -37,10 +41,19 @@ header .container {
     letter-spacing: 0px;
     line-height: 31px;
     color: #FFF;
-    font-family: "Droid Sans";
+    font-family: "Droid Sans Regular";
     font-weight: 400;
     text-align: center;
     text-decoration: none;
+}
+
+.menu-item a:hover {
+    color: #FF0000;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
 }
 
 .video {
@@ -69,7 +82,7 @@ video {
     letter-spacing: 1px;
     line-height: 93px;
     color: #FFF;
-    font-family: "Droid Sans";
+    font-family: "Droid Sans Bold";
     font-weight: 700;
     text-align: center;
     padding-bottom: 122px;
@@ -84,6 +97,23 @@ video {
     text-align: center;
 }
 
+.greetings a::after {
+    position: relative;
+    content: '';
+    width: 10000%;
+    transform: translateX(-50%);
+    display: block;
+    height: 2px;
+    background: #FFF;
+    margin: 0 auto;
+    margin-top: -42%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    z-index: 1;
+}
+
 .greetings span {
     margin-top: 10px;
     font-size: 3em;
@@ -95,18 +125,8 @@ video {
     letter-spacing: 0px;
     line-height: 31px;
     color: #FFF;
-    font-family: "Droid Serif";
+    font-family: "Droid Serif Regular";
     font-weight: 400;
-    text-align: center;
-}
-
-.video h2 {
-    font-size: 80px;
-    letter-spacing: 1px;
-    line-height: 93px;
-    color: #FFF;
-    font-family: "Droid Sans";
-    font-weight: 700;
     text-align: center;
 }
 
@@ -140,7 +160,7 @@ video {
     letter-spacing: 0px;
     line-height: 31px;
     color: #FFF;
-    font-family: "Droid Sans";
+    font-family: "Droid Sans Bold";
     font-weight: 700;
     text-align: center;
 }
@@ -151,8 +171,8 @@ video {
     font-size: 24px;
     letter-spacing: 1px;
     line-height: 33px;
-    color: #ffffff;
-    font-family: "Droid Serif";
+    color: #FFF;
+    font-family: "Droid Serif Regular";
     font-weight: 400;
     padding-bottom: 135px;
 }
@@ -186,7 +206,7 @@ video {
     letter-spacing: 0px;
     line-height: 33px;
     color: #FFF;
-    font-family: "Droid Sans";
+    font-family: "Droid Sans Bold";
     font-weight: 700;
 }
 
@@ -197,7 +217,7 @@ video {
     letter-spacing: 0px;
     line-height: 30px;
     color: #FFF;
-    font-family: "Droid Serif";
+    font-family: "Droid Serif Regular";
     font-weight: 400;
     text-align: center;
 }
@@ -218,36 +238,39 @@ video {
     text-align: center;
 }
 
+.portfolio-nav {
+    display: flex;
+    justify-content: center;
+}
+
 .portfolio-item-list {
     display: flex;
     justify-content: space-between;
-}
-
-.portfolio-item-list li {
-    display: flex;
-    justify-content: space-between;
+    justify-items: center;
+    width: 60%;
 }
 
 .portfolio-item-list a {
+    padding: 5px 20px;
     text-decoration: none;
     font-size: 30px;
     letter-spacing: 0px;
     line-height: 31px;
+    border-radius: 20px;
     color: #2C3E50;
     font-weight: 400;
-    transition: opacity .1s, visibility .12s all;
-    -webkit-transition: opacity .1s, visibility .12s all;
-    -moz-transition: opacity .1s, visibility .12s all;
-    -ms-transition: opacity .1s, visibility .12s all;
-    -o-transition: opacity .1s, visibility .12s all;
 }
 
 .portfolio-item-list a:hover {
     padding: 5px 20px;
-    border-radius: 20px;
     color: #FFF;
     background-color: #2ECC71;
-
+    outline: none;
+    transition: all 0.6s;
+    -webkit-transition: all 0.6s ease-in;
+    -moz-transition: all 0.6s;
+    -ms-transition: all 0.6s;
+    -o-transition: all 0.6s;
 }
 
 .portfolio-gallery {
@@ -262,8 +285,8 @@ video {
 }
 
 .gallery-item {
-    width: 33%;
-    padding-bottom: 30px;
+    position: relative;
+    padding: 20px;
 }
 
 .gallery img {
@@ -272,37 +295,60 @@ video {
     max-height: 260px;
     border: 10px solid #EEE;
     box-sizing: border-box;
+    background-color: #2C3E50;
+    opacity: 1;
 }
 
-.gallery-item h3 {
+.text-holder {
+    display: flex;
+    visibility: hidden;
+    max-width: 348px;
+    flex-direction: column;
+    position: absolute;
+    padding: 20px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+}
+
+.text-holder h3 {
     font-size: 35px;
     letter-spacing: 0px;
     line-height: 31px;
-    color: #FFF;
+    color: #2ECC71;
     font-weight: 700;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    visibility: hidden;
-    opacity: 0;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
 }
 
-.gallery-item a {
+.inf {
     text-decoration: none;
-    width: 110px;
-    height: 32px;
+    width: 25%;
+    height: auto;
+    color: #2ECC71;
     border-radius: 15px;
-    background-color: #FFF;
-    border: 1px solid #FFF;
-    padding: 5px 7px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    visibility: hidden;
+    background-color: transparent;
+    border: 2px solid #2ECC71;
+    padding: 7px 15px;
+    margin-left: 100px;
+    margin-top: 50px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+.inf:hover {
+    text-decoration: none;
+    color: #2ECC71;
+}
+
+.gallery-item:hover > .text-holder {
+    visibility: visible;
+    opacity: 1;
 }
 
 #team {
@@ -316,7 +362,7 @@ video {
     letter-spacing: 0px;
     line-height: 31px;
     color: #FFF;
-    font-family: "Droid Sans";
+    font-family: "Droid Sans Bold";
     font-weight: 700;
     text-align: center;
 }
@@ -350,7 +396,7 @@ video {
     letter-spacing: 0px;
     line-height: 31px;
     color: #FFF;
-    font-family: "Droid Sans";
+    font-family: "Droid Sans Bolds";
     font-weight: 700;
     text-align: center;
 }
@@ -363,13 +409,15 @@ video {
     letter-spacing: 0px;
     line-height: 30px;
     color: #FFF;
-    font-family: "Droid Serif";
+    font-family: "Droid Serif Regular";
     font-weight: 400;
     text-align: center;
 }
 
 .team-social {
     display: flex;
+    justify-content: space-between;
+    width: 40%;
 }
 
 .team-info span {
@@ -385,6 +433,16 @@ video {
     -o-border-radius: 50%;
 }
 
+.team-info span:hover {
+    color: #000;
+    background-color: #FFF;
+    transition: 0.8s all;
+    -webkit-transition: 0.8s all;
+    -moz-transition: 0.8s all;
+    -ms-transition: 0.8s all;
+    -o-transition: 0.8s all;
+}
+
 #contact {
     height: 100vh;
 }
@@ -396,7 +454,7 @@ video {
     letter-spacing: 0px;
     line-height: 31px;
     color: #2C3E50;
-    font-family: "Droid Sans";
+    font-family: "Droid Sans Bold";
     font-weight: 700;
     text-align: center;
 }
@@ -406,7 +464,7 @@ video {
     letter-spacing: 0px;
     line-height: 33px;
     color: #2C3E50;
-    font-family: "Droid Sans";
+    font-family: "Droid Sans Bold";
     font-weight: 700;
     text-align: center;
     padding-bottom: 88px;
@@ -428,12 +486,11 @@ video {
 input {
     width: 80%;
     height: 30px;
-
     font-size: 26px;
     letter-spacing: 0px;
     line-height: 33px;
     color: #2C3E50;
-    font-family: "Droid Serif";
+    font-family: "Droid Serif Regular";
     font-weight: 400;
     border-style: none;
     border-bottom: solid 2px #2ECC71;
@@ -451,7 +508,7 @@ input {
     letter-spacing: 0px;
     line-height: 33px;
     color: #2C3E50;
-    font-family: "Droid Serif";
+    font-family: "Droid Serif Regular";
     font-weight: 400;
     border-style: none;
     border-bottom: solid 2px #2ECC71;
@@ -468,8 +525,18 @@ input {
     margin-top: 48px;
 }
 
-address {
+.btn:hover {
+    background-color: #FFF;
+    color: #2ECC71;
+    border: #2ECC71 2px solid;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    -o-transition: 0.5s all;
+}
 
+.address {
     display: flex;
     flex-direction: column;
     width: 15%;
@@ -477,19 +544,23 @@ address {
     letter-spacing: 0px;
     line-height: 33px;
     color: #2C3E50;
-    font-family: "Droid Sans";
+    font-family: "Droid Sans Regular";
     font-weight: 400;
     font-style: normal;
-
 }
 
-address span {
+.refs:hover {
+    text-decoration: none;
+    color: #FF0000;
+}
+
+.address span {
     font-size: 16px;
     font-weight: 700;
 }
 
 footer {
-    background-color: #2C3E50;
+    background-color: #34495E;
     height: 282px;
 }
 
@@ -501,17 +572,22 @@ footer .container {
 
 .footer-content-wrap {
     display: flex;
-    justify-content: space-between;
     padding-top: 38px;
 }
 
 .footer-address {
-    width: 14%;
+    display: flex;
+    flex-direction: column;
+
+    width: 30%;
     font-style: normal;
 }
 
 .referenses {
-    width: 13%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 30%;
 }
 
 .referenses a {
@@ -520,20 +596,37 @@ footer .container {
     font-size: 16px;
     letter-spacing: 0px;
     line-height: 26px;
-    font-family: "Droid Sans";
+    font-family: "Droid Sans Bold";
     font-weight: 700;
     text-align: center;
+    font-style: normal;
+}
+
+.referenses a:hover {
+    color: #FF0000;
 }
 
 .social {
     display: flex;
-    width: 50%;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 30%;
+}
+
+.social span:hover {
+    color: #000;
+    background-color: #FFF;
+    transition: 0.8s all;
+    -webkit-transition: 0.8s all;
+    -moz-transition: 0.8s all;
+    -ms-transition: 0.8s all;
+    -o-transition: 0.8s all;
 }
 
 .social ul {
     display: flex;
-    width: 40%;
-    justify-content: space-between;
+    width: 100%;
+    justify-content: space-around;
 }
 
 .footer-address p {
@@ -541,20 +634,18 @@ footer .container {
     letter-spacing: 0px;
     line-height: 26px;
     color: #FFF;
-    font-family: "Droid Sans";
+    font-family: "Droid Sans Bold";
     font-weight: 700;
-    text-align: center;
     text-decoration: none;
 }
 
 footer span {
-    margin-top: -15px;
-    font-size: 3em;
+    font-size: 2em;
     color: #FFF;
-    width: 60px;
-    height: 60px;
-    padding-top: 15px;
-    padding-left: 15px;
+    width: 40px;
+    height: 40px;
+    padding-top: 10px;
+    padding-left: 12px;
     border: solid 2px #FFF;
     border-radius: 50%;
     -webkit-border-radius: 50%;
