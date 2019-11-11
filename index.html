@@ -1,3 +1,8 @@
+<!-- .vscode Этой папки под гитом быть не должно. Зачем кому-то настройки твоей IDE -->
+<!-- Огромный горизонтальный скрол -->
+<!-- Соцсети не круглые, не по центру -->
+<!-- Нет оверлея -->
+<!-- На первой секции полосочка перечеркивает иконку -->
 <!DOCTYPE HTML>
 <html lang="en">
 
@@ -97,7 +102,7 @@
             <nav class="portfolio-nav">
                 <ul class="portfolio-item-list">
                     <li><a href="">All</a></li>
-                    <li><a href="">Design</a></li>
+                    <li><a href="">Design</a></li><!-- 1. В хреф надо хотя бы решетку вкладывать. 2. Нет активного состояния по умолчанию -->
                     <li><a href="">Web</a></li>
                     <li><a href="">Illustration</a></li>
                     <li><a href="">Motion</a></li>
@@ -168,8 +173,8 @@
                                 Aenean sollicitudin, lorem quis bibendum auctor,</p>
                             <div class="team-social">
                                 <a href="#"><span class="fab fa-twitter"></span></a>
-                                <a href="#"><span class="fab fa-instagram"></span></a>
-                            </div>
+                                <a href="#"><span class="fab fa-instagram"></span></a><!-- Это список. Тут же соцсетей может быть очень много -->
+                        </div>
                         </div>
                     </li>
                     <li>
@@ -194,7 +199,7 @@
             <div class="contact-wrap">
                 <form action="#" method="POST" class="comment-form">
                     <input type="text" name="name" id="name" placeholder="Name" class="name" value="">
-                    <label for="name"></label>
+                    <label for="name"></label><!-- А зачем пустой лейбл то? лучше б инпут обернул уже в него. Или вообще не использовал -->
                     <input type="email" name="email" id="email" placeholder="Email" class="email" value="">
                     <label for="email"></label>
                     <textarea name="message" id="message" placeholder="Message" class="message"></textarea>
@@ -235,8 +240,8 @@
         </div>
     </footer>
     <script src="./js/custom.js"></script>
-    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
-    <script src="./js/header.js"></script>
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script> <!-- Чего не последняя версия? -->
+    <script src="./js/header.js"></script><!-- А чего в кастомных стилях не писать то? Используй асинхронную загрузку или defer-->
 </body>
 
 </html>
